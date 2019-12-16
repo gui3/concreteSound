@@ -1,44 +1,43 @@
 # contribute to concreteSound
 
-> **this is a draft**  !
+> :exclamation: :exclamation: **this is a draft**  !
 > it aims to help **me** start on a good base
 > and to know my own guidelines
 > **before starting the project**
 
 
 
-## Contribute by CODING (or editing documentation) :memo:
+# Contribute by CODING :memo:
 
 > inspired by [atom editor styleguides](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)
 
-### Using Git
+## Using Git
 
 > Of course we are using Git, you know that,
-> UNLESS you only came here to write documentation.
+> UNLESS you only came here to write documentation or translations.
 > In this case, [check this tutorial](https://opensource.com/article/18/1/step-step-guide-git)
 
-#### Git add . (and commit frequency)
+### Git add . (and commit frequency)
 
-There will be NO `git add .`   
-*use* `git add path/to/file.ext` *instead*
+There will be NO **git add .**   
+`git add path/to/file.ext` is [better](findAnArticle)
 
 There will be **as many commits as you can make**.   
 *one can write a lot in 10 minutes*
 
 if you want to add your entire codebase,
 or if **you don't remember what you changed**,
-please commit using one of these message (or alike)
+please include the #oops hashtag
 ```
-:confounded: #oops git add .
 :confounded: #oops git add . - optionnal description
 ```
 *You can use git add ., but be sure it only adds ONE or TWO (5 max) RELATED files*
 
-#### Git Commit Messages
+### Git Commit Messages
 
 The typical message for a commit is
 ```
-":emoji: #tag describe what you do - aside note"
+:emoji: #tag describe what you do - aside note
 ```
 
 > every commit should come with a message,
@@ -51,7 +50,7 @@ you SHOULD USE **these hashtags** to help this task :
 - `#syntax` when rewriting/refactoring code
 - `#create` or `#add` when adding a new feature
 - `#bug` when fixing a bug
-- `#oops` when [you don't remember what you commit](#git-add-.-and-commit-frequency)
+- `#oops` when [you don't remember what you commit](#)
 
 *You can add multiple hashtags in a single commit message, anywhere you want in the message*
 
