@@ -1,0 +1,8 @@
+{
+  "name": "template",
+  "author": {
+    "name": "gui3",
+    "email": "guillaume@example.fr"
+  },
+  "version": 3,
+}
