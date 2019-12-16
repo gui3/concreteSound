@@ -5,17 +5,25 @@
 > and to know my own guidelines
 > **before starting the project**
 
+> as long as there is no main README,
+> i am talking to me here
+
 
 
 # Contribute by CODING :memo:
 
 > inspired by [atom editor styleguides](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)
 
-## Using Git
 
-> Of course we are using Git, you know that,
-> UNLESS you only came here to write documentation or translations.
-> In this case, [check this tutorial](https://opensource.com/article/18/1/step-step-guide-git)
+## Git
+
+> Git is the heart **beat** of a project,
+> so let's not suffer from ...
+[arrhythmia](https://en.wikipedia.org/wiki/Arrhythmia) :laughing:
+
+Of course we are using Git, you know that,
+UNLESS you only came here to write documentation or translations.
+In this case, [check this tutorial](https://opensource.com/article/18/1/step-step-guide-git)
 
 ### Git add . (and commit frequency)
 
@@ -27,17 +35,18 @@ There will be **as many commits as you can make**.
 
 if you want to add your entire codebase,
 or if **you don't remember what you changed**,
-please include the #oops hashtag
+please include the **#oops hashtag**
 ```
-:confounded: #oops git add . - optionnal description
+$ git comit -m ":confounded: #oops git add . - optionnal description"
 ```
-*You can use git add ., but be sure it only adds ONE or TWO (5 max) RELATED files*
+*You can use git add .
+but be sure it only adds ONE or TWO (5 max) RELATED files*
 
 ### Git Commit Messages
 
 The typical message for a commit is
 ```
-:emoji: #tag describe what you do - aside note
+:emoji: describe what you do - aside note #tag
 ```
 
 > every commit should come with a message,
@@ -52,17 +61,114 @@ you SHOULD USE **these hashtags** to help this task :
 - `#bug` when fixing a bug
 - `#oops` when [you don't remember what you commit](#)
 
-*You can add multiple hashtags in a single commit message, anywhere you want in the message*
+*You can add multiple hashtags in a single commit message,
+anywhere you want in the message*
 
-In addition, you can add **a nice looking emoji at the beginning**, but it's not so important than hashtags.
+In addition, you can add **a nice looking emoji at the beginning**,
+but it's not so important than hashtags.
 - :books: `:books: #docs`
 - :memo: `:memo: #syntax`
-- :heavy_plus_sign: `:heavy_plus_sign: #create` or `:heavy_plus_sign: #add`
+- :heavy_plus_sign: `:heavy_plus_sign: #create`
+  or `:heavy_plus_sign: #add`
 - :bug: `:bug: #bug`
 - :lock: `:lock: #security`
 - :confounded: `:confounded: #oops`
 
 
+## Actual Coding
+
+> There is a complicated balance
+> between Good Practices
+> and accessibility to beginners,
+> balance we will try to reach here
+
+### General Syntax
+
+> Readability, sustainability, simplicity
+> and beauty of the code
+> are priorized over folder size,
+> until performance issues comes up
+> in wich case minifying the scripts
+> could be an option
+
+**Whatever the language** (*as long as it allows*)
+these few syntax guidelines apply :
+
+- **2 spaces indentation** (even in HTML)
+
+- separate code in **many little files**
+  better than one
+  [stodgy](https://www.dictionary.com/browse/stodgy)
+  spaghetti plate.
+
+- **break lines** as much as possible,
+  in *semantically relevant* pieces of code
+  (of text for markdown).
+  Keep all the code under **80 chars** length please   
+  - **long URLS** will be the only exception
+  - **code comments** are NOT an exception,
+    use a new line
+  - **HTML** ... we'll see later
+
+- SPACES NOT TABS
+  because it had to be reminded
+
+```js
+let var1,
+    var2,
+    var3;
+// now tell me how to align these
+// using length-varying editor-dependant tabs
+// you genius
+```
+
+
+
+### maximum cross-compatibility   
+Finally, (a few) rules that will help to build
+both for linux, windows and mac :
+
+- use **[node path library](https://nodejs.org/api/path.html)**
+  to hande ANY path.
+  Never hard-code an absolute path
+  and try staying inside the **application root**
+
+- if needed to **navigate to user path**
+  (for example the user's project folder),
+  use [the best library available](yet-to-find)
+
+- avoid **native modules** as possible
+  *but this [topic will have its own dedicated part](link)*
+
+*And here are a few more
+inspired by [atom guidelines](https://flight-manual.atom.io/hacking-atom/sections/cross-platform-compatibility/)*
+
+- **file/folder names with spaces** are forbidden,
+  EVEN from the user side
+  (*2 exceptions :
+  for imported files and project files,
+  in which case refer to
+  atom guidelines above*)
+
+- `? \ / < > ? % | : " *`
+  are **forbidden characters** in file/folder names
+
+- `com1->com9 lpt1->lpt9 con nul aux prn`
+  are **forbidden file names** regardless of extention
+  (for example `com4.whatever` is forbidden)
+
+- If you need to use a path for a URL
+  use the **file:** protocol with an absolute path
+  (*from the node path library, remember*), e.g. file:///c|/test/pic.png
+
+- **don't use** `fs.stat`
+
+- **be carefull with** `path.relative`
+  as it can't traverse drives
+
+- if **file deletion needed**
+  use [rimraf](https://www.npmjs.com/package/rimraf)
+
 
 
 
@@ -71,30 +177,6 @@ _____
 _____
 _____
 
-
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
-* Reference issues and pull requests liberally after the first line
-* When only changing documentation, include `[ci skip]` in the commit title
-* Consider starting the commit message with an applicable emoji:
-  * :art: `:art:` when improving the format/structure of the code
-  * :racehorse: `:racehorse:` when improving performance
-  * :non-potable_water: `:non-potable_water:` when plugging memory leaks
-  * :memo: `:memo:` when writing docs
-  * :penguin: `:penguin:` when fixing something on Linux
-  * :apple: `:apple:` when fixing something on macOS
-  * :checkered_flag: `:checkered_flag:` when fixing something on Windows
-  * :bug: `:bug:` when fixing a bug
-  * :fire: `:fire:` when removing code or files
-  * :green_heart: `:green_heart:` when fixing the CI build
-  * :white_check_mark: `:white_check_mark:` when adding tests
-  * :lock: `:lock:` when dealing with security
-  * :arrow_up: `:arrow_up:` when upgrading dependencies
-  * :arrow_down: `:arrow_down:` when downgrading dependencies
-  * :shirt: `:shirt:` when removing linter warnings
-
-### JavaScript Styleguide
 
 All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com/).
 
