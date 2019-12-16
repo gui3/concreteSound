@@ -29,6 +29,6 @@ These are designed to prevent foreseeable problems.
 The maintainers of ConcreteSound
 **deny all responsibility** for such damages
 if it appears that you have somehow
-**changed anything** in the .core folder
+**changed anything** in the .core or app folders
 **OR** if the damage cannot be reproduced
 using ANY of the official releases.
