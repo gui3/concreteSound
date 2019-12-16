@@ -70,15 +70,9 @@ but it's not so important than hashtags.
 
 ## Actual Coding
 
-> There is a complicated balance
-> between Good Practices
-> and accessibility to beginners,
-> balance we will try to reach here
-
 ### General Syntax
 
 > Readability, sustainability, simplicity
-> and beauty of the code
 > are priorized over folder size,
 > until performance issues comes up
 > in wich case minifying the scripts
@@ -88,10 +82,9 @@ but it's not so important than hashtags.
 these few syntax guidelines apply :
 
 - **2 spaces indentation** (even in HTML)   
-  and additional spaces to **left-align**,
-  see example below.
-  *This is not [standardjs](https://standardjs.com/#why-should-i-use-javascript-standard-style)
-  but it has [benefits](#js-syntax)*
+  Though I really like 4 spaces style for readability,
+  I choose to follow [standardjs](https://standardjs.com/#why-should-i-use-javascript-standard-style)
+  in case these tools might be useful
 
 - separate code in **many little files**
   better than one
@@ -156,11 +149,18 @@ between readability
 and file-size matters
   (4 spaces is 2 times 2 spaces)
 
-Here are the cases you will **left-align**
+Here is an example of indentations
 
 ```js
 // variable declaration
-const pi = 3.141592653
+const pi = 3.141592653,
+      a4 = "442Hz";
+// long arguments
+do.stuff(function() {
+    //do stuff
+  },
+  arg1="loooooooooooooooooooooooooooong",
+          )
 
 
 ```
