@@ -1,9 +1,11 @@
 ❗ CORE SoundBricks WARNING ❗
 
-EN 🇬🇧 🇺🇸 : DO NOT CHANGE ANYTHING IN THIS FOLDER
+-EN 🇬🇧 🇺🇸 :
+DO NOT CHANGE OR ADD ANYTHING IN THIS FOLDER
 see above and documentation for more details
 
-FR 🇫🇷 : NE PAS TOUCHER AU CONTENU DE CE DOSSIER
+-FR 🇫🇷 :
+NE PAS TOUCHER AU CONTENU DE CE DOSSIER
 voir la documentation pour plus de details
 
 
@@ -12,8 +14,7 @@ DETAILS ------------------------------------------
 you entered a **dangerous zone**
 
 ConcreteSound is meant to be fully open source,
-modular and tweakable.
-HOWEVER
+modular and tweakable. HOWEVER
 do not change or add CORE soundbricks
 if you don't know what you do.
 These are designed to prevent foreseeable problems.

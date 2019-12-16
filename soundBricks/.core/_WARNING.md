@@ -1,20 +1,23 @@
 # :exclamation: CORE SoundBricks WARNING :exclamation:
 
-EN :uk: **DO NOT CHANGE ANYTHING IN THIS FOLDER**
+- EN :uk:
+**DO NOT CHANGE OR ADD ANYTHING IN THIS FOLDER**
 see above and documentation for more details
 
-FR :fr: **NE PAS TOUCHER AU CONTENU DE CE DOSSIER**
+- FR :fr:
+**NE PAS TOUCHER AU CONTENU DE CE DOSSIER**
 voir la documentation pour plus de details
 
 
-## DETAILS ------------------------------------------
+## DETAILS
 
 > you entered a **dangerous zone**
 
 ConcreteSound is meant to be fully open source,
-modular and tweakable.HOWEVER
+modular and tweakable. HOWEVER
 **do not change or add CORE soundbricks
 if you don't know what you do**.
+
 These are designed to prevent foreseeable problems.
 
 **Tweaking or adding** core plugins can lead to :
