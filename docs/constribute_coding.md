@@ -84,7 +84,7 @@ these few syntax guidelines apply :
 - **2 spaces indentation** (even in HTML)   
   Though I really like 4 spaces style for readability,
   I choose to follow [standardjs](https://standardjs.com/#why-should-i-use-javascript-standard-style)
-  in case these tools might be useful
+  in case these tools might be useful one day
 
 - separate code in **many little files**
   better than one
@@ -103,14 +103,6 @@ these few syntax guidelines apply :
 - SPACES NOT TABS
   because it had to be reminded
 
-```js
-let var1,
-    var2,
-    var3;
-// now tell me how to align these
-// using length-varying editor-dependant tabs
-// you genius
-```
 
 ### Text and Markdown syntax
 
@@ -138,23 +130,17 @@ For example this involves **indentation of list items** :
 
 ### Js syntax
 
-> This is not [standardjs](https://standardjs.com/#why-should-i-use-javascript-standard-style),
-> but let's keep that balance
-> between Good Practice and Common Sense
+The code should follow [standardjs](https://standardjs.com/rules.html)
+good practices.
 
-We use 2 spaces indentation as a compromise
-between readability
-  (tabs have varying lengths,
-  spaces allow precise left-align)
-and file-size matters
-  (4 spaces is 2 times 2 spaces)
-
-Here is an example of indentations
+Here is an example
 
 ```js
+
 // variable declaration
 const pi = 3.141592653,
-      a4 = "442Hz";
+  a4 = "442Hz";
+
 // long arguments
 do.stuff(function() {
     //do stuff
