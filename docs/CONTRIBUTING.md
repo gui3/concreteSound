@@ -5,11 +5,49 @@
 > and to know my own guidelines
 > **before starting the project**
 
-## Styleguides
+
+
+## Contribute by CODING (or editing documentation) :memo:
 
 > inspired by [atom editor styleguides](https://github.com/atom/atom/blob/master/CONTRIBUTING.md)
 
 ### Git Commit Messages
+
+The typical message for a commit is
+```
+":emoji: #tag describe what you do - aside note"
+```
+
+> every commit should come with a message,
+> emojis and aside notes are optionnal
+
+Commits messages will be **parsed and categorized**,
+you SHOULD USE **these hashtags** to help this task :
+
+- `#docs` when editing docs
+- `#syntax` when rewriting/refactoring code
+- `#create` or `#add` when adding a new feature
+- `#bug` when fixing a bug
+
+*You can add multiple hashtags in a single commit message, anywhere you want in the message*
+
+In addition, you can add a nice looking emoji at the beginning, but it's not so important than hashtags.
+- :books: `:books: #docs`
+- :memo: `:memo: #syntax`
+- :heavy_plus_sign: `:heavy_plus_sign: #create` or `:heavy_plus_sign: #add`
+- :bug: `:bug: #bug`
+- :lock: `:lock: #security`
+
+
+
+
+
+
+
+_____
+_____
+_____
+
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
@@ -59,6 +97,10 @@ All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com
     * Class methods and properties (methods starting with `static`)
     * Instance methods and properties
 * [Avoid platform-dependent code](https://flight-manual.atom.io/hacking-atom/sections/cross-platform-compatibility/)
+
+
+
+
 
 
 > after this comes a **template** from
