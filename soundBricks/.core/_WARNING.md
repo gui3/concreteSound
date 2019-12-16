@@ -1,12 +1,12 @@
 # :exclamation: CORE SoundBricks WARNING :exclamation:
 
 - EN :uk:
-**DO NOT CHANGE OR ADD ANYTHING IN THIS FOLDER**
-see above and documentation for more details
+  **DO NOT CHANGE OR ADD ANYTHING IN THIS FOLDER**
+  see above and documentation for more details
 
 - FR :fr:
-**NE PAS TOUCHER AU CONTENU DE CE DOSSIER**
-voir la documentation pour plus de details
+  **NE PAS TOUCHER AU CONTENU DE CE DOSSIER**
+  voir la documentation pour plus de details
 
 
 ## DETAILS
