@@ -133,21 +133,15 @@ For example this involves **indentation of list items** :
 The code should follow [standardjs](https://standardjs.com/rules.html)
 good practices.
 
+> If you use Atom text editor,
+> you can install
+> **[linter-js-standard](https://atom.io/packages/linter-js-standard)**,
+> for other editors, check the web.
+
+
 Here is an example
 
 ```js
-
-// variable declaration
-const pi = 3.141592653,
-  a4 = "442Hz";
-
-// long arguments
-do.stuff(function() {
-    //do stuff
-  },
-  arg1="loooooooooooooooooooooooooooong",
-          )
-
 
 ```
 
