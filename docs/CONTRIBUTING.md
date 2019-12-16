@@ -28,16 +28,17 @@ you SHOULD USE **these hashtags** to help this task :
 - `#syntax` when rewriting/refactoring code
 - `#create` or `#add` when adding a new feature
 - `#bug` when fixing a bug
+- `#oops` when [you don't remember what you commit](#)
 
 *You can add multiple hashtags in a single commit message, anywhere you want in the message*
 
-In addition, you can add a nice looking emoji at the beginning, but it's not so important than hashtags.
+In addition, you can add **a nice looking emoji at the beginning**, but it's not so important than hashtags.
 - :books: `:books: #docs`
 - :memo: `:memo: #syntax`
 - :heavy_plus_sign: `:heavy_plus_sign: #create` or `:heavy_plus_sign: #add`
 - :bug: `:bug: #bug`
 - :lock: `:lock: #security`
-
+- :confounded: `:confounded: #oops`
 
 
 
