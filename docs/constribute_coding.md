@@ -52,12 +52,12 @@ you SHOULD USE **these hashtags** to help this task :
 - `#syntax` when rewriting/refactoring code
 - `#create` or `#add` when adding a new feature
 - `#bug` when fixing a bug
-- `#oops` when [you don't remember what you commit](#)
+- `#oops` when *you don't remember what you commit*
 
-*You can add multiple hashtags in a single commit message,
-anywhere you want in the message*
+> You can add multiple hashtags in a single commit message,
+> anywhere you want in the message*
 
-In addition, you can add **a nice looking emoji at the beginning**,
+In addition, you can add **a nice looking emoji**,
 but it's not so important than hashtags.
 - :books: `:books: #docs`
 - :memo: `:memo: #syntax`
@@ -84,7 +84,9 @@ these few syntax guidelines apply :
 - **2 spaces indentation** (even in HTML)   
   Though I really like 4 spaces style for readability,
   I choose to follow [standardjs](https://standardjs.com/#why-should-i-use-javascript-standard-style)
-  in case these tools might be useful one day
+  in case these tools might be useful one day.
+  *Better developpers made this choice,
+  and I agree with them*.
 
 - separate code in **many little files**
   better than one
@@ -94,7 +96,8 @@ these few syntax guidelines apply :
 - **break lines** as much as possible,
   in *semantically relevant* pieces of code
   (of text for markdown).
-  Keep all the code under **80 chars** length please   
+  Keep all the code under **80 chars** length please,
+  and the shorter the line the better.   
   - **long URLS** will be an exception
   - **code comments** are NOT an exception,
     use a new line
@@ -111,7 +114,7 @@ the rule is : **make it beautiful in notepad**.
 
 One should be able to read them in a text editor
 effortlessly, without syntax highlighting and styles,
-and most of all, WITHOUT LONG LINES that need SCROLLING.
+and most of all, WITHOUT LONG LINES that need SIDE-SCROLLING.
 
 For example this involves **indentation of list items** :
 ```md
@@ -130,8 +133,9 @@ For example this involves **indentation of list items** :
 
 ### Js syntax
 
-The code should follow [standardjs](https://standardjs.com/rules.html)
-good practices.
+The code should follow [standardjs practices (check the link)](https://standardjs.com/rules.html).
+
+
 
 > If you use Atom text editor,
 > you can install
@@ -180,7 +184,7 @@ inspired by [atom guidelines](https://flight-manual.atom.io/hacking-atom/section
 
 - If you need to use a path for a URL
   use the **file:** protocol with an absolute path
-  (*from the node path library, remember*), e.g. file:///c|/test/pic.png
+  (*from the node path library, remember*), e.g. `file:///c|/test/pic.png`
 
 - **don't use** `fs.stat`
 
