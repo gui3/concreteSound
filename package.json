@@ -1,9 +1,28 @@
 {
-  "name": "my-cool-package",
-  "devDependencies": {
-    "standard": "*"
-  },
+  "name": "concretesound",
   "scripts": {
     "test": "standard && node my-tests.js"
+  },
+  "description": "... soon to come 🎘",
+  "version": "0.0.0",
+  "main": "app/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gui3/concreteSound.git"
+  },
+  "author": "gui3",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gui3/concreteSound/issues"
+  },
+  "homepage": "https://github.com/gui3/concreteSound#readme",
+  "dependencies": {
+    "electron": "^7.1.6"
+  },
+  "devDependencies": {
+    "standard": "*"
   }
 }
