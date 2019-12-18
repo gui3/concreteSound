@@ -33,12 +33,14 @@ class StandardWindow extends BrowserWindow {
     this.webContents.on('did-finish-load', () => {
       loadCss(this, path.join(__dirname, '/../shared.css'))
       if (onDidFinishLoad) onDidFinishLoad()
+      if (this.onDidFinishLoad) this.onDidFinishLoad()
     })
 
     // gracefully show when ready to prevent flickering
     this.once('ready-to-show', () => {
       this.show()
       if (onReadyToShow) onReadyToShow()
+      if (this.onReadyToShow) this.onReadyToShow()
     })
   }
 }

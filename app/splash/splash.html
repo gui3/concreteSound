@@ -3,12 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>loading...</title>
+    <style media="screen">
+/* basic css for instant appearance */
+body {
+  padding: 1em;
+  background: #fff;
+}
+    </style>
   </head>
   <body onclick="ipc.send('bodyClicked')">
     <div>
 
       <h1 id="appName">
-        concreteSound
+        <♯> ConcreteSound
       </h1>
       <p>
         Loading ... <span id="loadPercent"></span>
@@ -19,7 +26,7 @@
 
     </div>
   </body>
-<script type="text/javascript">
+  <script type="text/javascript">
 var { ipcRenderer } = require('electron')
 
 var btnClose = document.getElementById('btnClose')
@@ -30,5 +37,5 @@ btnClose.addEventListener('click', function () {
     // })
     ipcRenderer.send('quitApp') // , 'someData');
 });
-</script>
+  </script>
 </html>

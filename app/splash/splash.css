@@ -1,3 +1,10 @@
+/*
+* for more advanced css
+* loaded after did-finish-load event
+* of the splashscreen
+*/
 body {
-  padding: 5em;
+  transition: background-color 10s ease;
+  background-color: #f2d16b !important;
+  /* soooo smooth */
 }

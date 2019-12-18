@@ -4,25 +4,15 @@
 *     (this choice because app.js deals with electron.app)
 */
 
-const path = require('path')
+// const path = require('path')
 
 const StandardWindow = require('./shared/helpers/StandardWindow')
-const loadCss = require('./shared/helpers/loadCss')
+const splash = require('./splash/splash')
 
 function main () {
-  let splashScreen = new StandardWindow({
-    file: 'app/splash/splash.html',
-    width: 400,
-    height: 170,
-    frame: false,
-    resizable: false
-  })
+  let splashScreen = splash()
+  const keepSplashScreen = true // uncomment for debugging
 
-  splashScreen.show() // first things first
-
-  loadCss(splashScreen, path.join(__dirname, 'splash', 'splash.css'))
-
-  // Create the browser window.
   let mainWindow = new StandardWindow({
     devTools: true,
     file: 'app/main.html',
@@ -32,9 +22,8 @@ function main () {
       // preload: path.join(__dirname, 'preload.js')
     },
     onDidFinishLoad: _ => {
-      // splashScreen.close()
+      if (!keepSplashScreen) splashScreen.close()
       splashScreen = null
-      console.log('splash closed')
     }
   })
 

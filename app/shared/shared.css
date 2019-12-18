@@ -1,4 +1,29 @@
 body {
   font-family: Consolas, monospace, sans-serif;
-  background: #FFCC00;
+  color: #111;
+
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+
+  background: #eaeaea;
+}
+
+button {
+  font-family: Consolas, monospace, sans-serif;
+  color: #222;
+  font-size: 1em;
+
+  background: none;
+
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 0.5em 0;
+}
+button:hover {
+  box-shadow: 0 0 5px #f77;
+}
+button:active {
+  box-shadow: none;
 }

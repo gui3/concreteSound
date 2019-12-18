@@ -10,6 +10,7 @@ function loadCss (elWindow, cssPath) {
       if (error) throw error
       const css = data.replace(/\s{2,10}/g, ' ').trim()
       elWindow.webContents.insertCSS(css)
+      // console.log('loaded css ' + css)
     }
   )
 }
