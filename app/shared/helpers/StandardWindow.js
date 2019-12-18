@@ -16,16 +16,22 @@ const defaultProps = {
 }
 
 class StandardWindow extends BrowserWindow {
-  constructor ({ file, ...windowSettings }, onDidFinishLoad, onReadyToShow) {
+  constructor ({
+    file,
+    devTools,
+    onDidFinishLoad,
+    onReadyToShow,
+    ...windowSettings
+  }) {
     // calls new BrowserWindow with these props
     super({ ...defaultProps, ...windowSettings })
 
     this.loadFile(file)
 
-    this.webContents.openDevTools()
+    if (devTools) this.webContents.openDevTools()
 
     this.webContents.on('did-finish-load', () => {
-      loadCss(this, path.join(__dirname, 'shared.css'))
+      loadCss(this, path.join(__dirname, '/../shared.css'))
       if (onDidFinishLoad) onDidFinishLoad()
     })
 

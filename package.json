@@ -2,7 +2,7 @@
   "name": "concretesound",
   "description": "... soon to come ♬",
   "version": "0.0.0",
-  "main": "app/main.js",
+  "main": "app/app.js",
   "scripts": {
     "start": "electron .",
     "test": "standard && node my-tests.js"
