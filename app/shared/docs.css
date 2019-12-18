@@ -1,0 +1,12 @@
+body {
+  padding: 4em;
+}
+
+pre {
+  border: 1px solid #012;
+  background: #fafaff;
+  /*color: #6C8;*/
+  padding: 1em !important;
+  border-radius: 0.8em;
+  box-shadow: 2px 2px 3px inset #888;
+}

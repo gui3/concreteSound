@@ -1,11 +1,12 @@
 {
   "name": "concretesound",
+  "description": "... soon to come ♬",
+  "version": "0.0.0",
+  "main": "app/main.js",
   "scripts": {
+    "start": "electron .",
     "test": "standard && node my-tests.js"
   },
-  "description": "... soon to come 🎘",
-  "version": "0.0.0",
-  "main": "app/index.js",
   "directories": {
     "doc": "docs"
   },
@@ -13,16 +14,18 @@
     "type": "git",
     "url": "git+https://github.com/gui3/concreteSound.git"
   },
-  "author": "gui3",
+  "author": {
+    "name": "gui3",
+    "email": "guillaume.silvent@hotmail.fr"
+  },
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/gui3/concreteSound/issues"
   },
   "homepage": "https://github.com/gui3/concreteSound#readme",
-  "dependencies": {
-    "electron": "^7.1.6"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "electron": "^7.1.6",
     "standard": "*"
   }
 }
