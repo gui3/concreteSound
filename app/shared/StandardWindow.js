@@ -15,23 +15,26 @@ const defaultProps = {
   }
 }
 
-class Window extends BrowserWindow {
-  constructor ({ file, ...windowSettings }) {
+class StandardWindow extends BrowserWindow {
+  constructor ({ file, ...windowSettings }, onDidFinishLoad, onReadyToShow) {
     // calls new BrowserWindow with these props
     super({ ...defaultProps, ...windowSettings })
 
     this.loadFile(file)
-    this.webContents.on('did-finish-load', function () {
-      loadCss(this, path.join(__dirname, 'shared.css'))
-    })
 
     this.webContents.openDevTools()
+
+    this.webContents.on('did-finish-load', () => {
+      loadCss(this, path.join(__dirname, 'shared.css'))
+      if (onDidFinishLoad) onDidFinishLoad()
+    })
 
     // gracefully show when ready to prevent flickering
     this.once('ready-to-show', () => {
       this.show()
+      if (onReadyToShow) onReadyToShow()
     })
   }
 }
 
-module.exports = Window
+module.exports = StandardWindow

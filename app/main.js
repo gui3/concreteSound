@@ -1,20 +1,36 @@
 const { app } = require('electron')
-// const path = require('path')
+const path = require('path')
 
-const Window = require('./shared/Window')
+const StandardWindow = require('./shared/StandardWindow')
+const loadCss = require('./shared/loadCss')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 
 function main () {
+  let splashScreen = new StandardWindow({
+    file: 'app/splash/splash.html',
+    width: 400,
+    height: 170,
+    frame: false
+  })
+
+  splashScreen.show() // first things first
+
+  loadCss(splashScreen, path.join(__dirname, 'splash', 'splash.css'))
+
   // Create the browser window.
-  let mainWindow = new Window({
+  let mainWindow = new StandardWindow({
     file: 'app/main.html',
     width: 800,
     height: 600,
     webPreferences: {
       // preload: path.join(__dirname, 'preload.js')
     }
+  }, () => { // onDidFinishLoad
+    splashScreen.close()
+    splashScreen = null
+    console.log('splash closed')
   })
 
   mainWindow.on('closed', function () {
