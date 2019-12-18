@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>loading...</title>
   </head>
-  <body>
+  <body onclick="ipc.send('bodyClicked')">
     <div>
 
       <h1 id="appName">
@@ -13,7 +13,22 @@
       <p>
         Loading ... <span id="loadPercent"></span>
       </p>
+      <button type="button" id="btnClose">
+        CANCEL - close app
+      </button>
 
     </div>
   </body>
+<script type="text/javascript">
+var { ipcRenderer } = require('electron')
+
+var btnClose = document.getElementById('btnClose')
+
+btnClose.addEventListener('click', function () {
+    // ipc.once('actionReply', function(event, response){
+    //     processResponse(response);
+    // })
+    ipcRenderer.send('quitApp') // , 'someData');
+});
+</script>
 </html>

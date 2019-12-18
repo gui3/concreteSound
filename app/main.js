@@ -14,7 +14,8 @@ function main () {
     file: 'app/splash/splash.html',
     width: 400,
     height: 170,
-    frame: false
+    frame: false,
+    resizable: false
   })
 
   splashScreen.show() // first things first
@@ -32,7 +33,7 @@ function main () {
     },
     onDidFinishLoad: _ => {
       // splashScreen.close()
-      // splashScreen = null
+      splashScreen = null
       console.log('splash closed')
     }
   })

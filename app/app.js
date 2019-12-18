@@ -6,9 +6,14 @@
 *     guillaume.silvent@hotmail.fr
 */
 
-const { app } = require('electron')
+const { app, ipcMain } = require('electron')
 
 const main = require('./main')
+
+ipcMain.on('quitApp', function (event, data) {
+  app.quit()
+  // event.sender.send('actionReply', result)
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
