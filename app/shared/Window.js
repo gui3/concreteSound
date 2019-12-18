@@ -1,6 +1,7 @@
 const { BrowserWindow } = require('electron')
+const path = require('path')
 
-const loadSharedCss = require('./loadSharedCss')
+const loadCss = require('./loadCss')
 
 // default window settings
 const defaultProps = {
@@ -20,16 +21,9 @@ class Window extends BrowserWindow {
     super({ ...defaultProps, ...windowSettings })
 
     this.loadFile(file)
-
-    loadSharedCss()
-      .then((css) => {
-        console.log('---css :')
-        console.log(css)
-        this.webContents.insertCSS(css)
-      })
-      .catch(err => {
-        throw err
-      })
+    this.webContents.on('did-finish-load', function () {
+      loadCss(this, path.join(__dirname, 'shared.css'))
+    })
 
     this.webContents.openDevTools()
 
