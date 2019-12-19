@@ -32,3 +32,8 @@ if it appears that you have somehow
 **changed anything** in the .core or app folders
 **OR** if the damage cannot be reproduced
 using ANY of the official releases.
+
+```js
+// Welcome my son
+/* Welcome, to the MACHINE */
+```
