@@ -135,8 +135,6 @@ For example this involves **indentation of list items** :
 
 The code should follow [standardjs practices (check the link)](https://standardjs.com/rules.html).
 
-
-
 > If you use Atom text editor,
 > you can install
 > **[linter-js-standard](https://atom.io/packages/linter-js-standard)**,

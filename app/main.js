@@ -6,12 +6,13 @@
 
 // const path = require('path')
 
+const config = require('./config/config')
 const StandardWindow = require('./shared/helpers/StandardWindow')
 const splash = require('./splash/splash')
 
 function main () {
   let splashScreen = splash()
-  const keepSplashScreen = true // uncomment for debugging
+  // spitting out the daemons
 
   let mainWindow = new StandardWindow({
     devTools: true,
@@ -22,7 +23,7 @@ function main () {
       // preload: path.join(__dirname, 'preload.js')
     },
     onDidFinishLoad: _ => {
-      if (!keepSplashScreen) splashScreen.close()
+      if (!config.dev.KEEP_SPLASH) splashScreen.close()
       splashScreen = null
     }
   })

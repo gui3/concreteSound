@@ -23,7 +23,9 @@
     "url": "https://github.com/gui3/concreteSound/issues"
   },
   "homepage": "https://github.com/gui3/concreteSound#readme",
-  "dependencies": {},
+  "dependencies": {
+    "yaml": "^1.7.2"
+  },
   "devDependencies": {
     "electron": "^7.1.6",
     "standard": "*"
