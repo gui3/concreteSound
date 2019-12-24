@@ -6,11 +6,18 @@
 
 // const path = require('path')
 
-const config = require('./config/config')
-const StandardWindow = require('./shared/helpers/StandardWindow')
+const preboot = require('./config/preboot')
+const getLogger = require('./config/getLogger')
+const getProcessId = require('./getProcessId')
+
 const splash = require('./splash/splash')
+const StandardWindow = require('./shared/helpers/StandardWindow')
 
 function main () {
+  preboot()
+  const processId = getProcessId('main')
+  const logger = getLogger(processId)
+
   let splashScreen = splash()
   // spitting out the daemons
 
@@ -23,7 +30,7 @@ function main () {
       // preload: path.join(__dirname, 'preload.js')
     },
     onDidFinishLoad: _ => {
-      if (!config.dev.KEEP_SPLASH) splashScreen.close()
+      if (!process.env.KEEP_SPLASH) splashScreen.close()
       splashScreen = null
     }
   })
@@ -34,6 +41,8 @@ function main () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  logger.verbose('mainWindow ready')
 }
 
 module.exports = main

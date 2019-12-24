@@ -1,7 +1,0 @@
---- # config
-  prod:
-    LOG_TIME: true
-    LOG_LEVEL: 5
-
-  dev:
-    KEEP_SPLASH: true

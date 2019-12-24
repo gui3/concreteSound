@@ -2,7 +2,7 @@
 // const path = require('path')
 const fs = require('fs')
 
-const log = require('../../config/logger/log')
+const logger = require('../../config/logger/log')
 
 function loadCss (elWindow, cssPath) {
   fs.readFile(
