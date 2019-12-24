@@ -12,21 +12,27 @@
 */
 
 const intel = require('intel')
+require('./loadEnv')
 
-function getLogger (id, level) {
+function getLogger ({ id, level }) {
+  id = id || 'main'
+  level = level || process.env.LOG_LEVEL
+
   const logger = intel.getLogger(id)
 
   logger.setLevel(
-    logger[
-      level ||
-      process.env.LOG_LEVEL.toUpperCase()
-    ]
+    logger[level.toUpperCase()]
   )
+  intel.config({
+    formatters: {
+      simple: {
+        format: '[%(date)s] %(name)s.%(levelname)s: %(message)s',
+        colorize: true
+      }
+    }
+  })
 
-  logger.verbose(
-    'logger ' + id + ' ready, level ' +
-    process.env.LOG_LEVEL
-  )
+  logger.verbose('logger "' + id + '" ready, level ' + level)
 
   return logger
 }

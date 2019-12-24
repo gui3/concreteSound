@@ -6,17 +6,15 @@
 
 // const path = require('path')
 
-const preboot = require('./config/preboot')
-const getLogger = require('./config/getLogger')
-const getProcessId = require('./getProcessId')
+const logger = require('./config/getLogger')({
+  id: 'main'
+})
 
 const splash = require('./splash/splash')
 const StandardWindow = require('./shared/helpers/StandardWindow')
 
 function main () {
-  preboot()
-  const processId = getProcessId('main')
-  const logger = getLogger(processId)
+  logger.verbose('Initialize main process ...')
 
   let splashScreen = splash()
   // spitting out the daemons

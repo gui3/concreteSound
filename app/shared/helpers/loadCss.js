@@ -2,7 +2,9 @@
 // const path = require('path')
 const fs = require('fs')
 
-const logger = require('../../config/logger/log')
+const logger = require('../../config/getLogger')({
+  id: 'main.css'
+})
 
 function loadCss (elWindow, cssPath) {
   fs.readFile(
@@ -12,7 +14,7 @@ function loadCss (elWindow, cssPath) {
       if (error) throw error
       const css = data.replace(/\s{2,10}/g, ' ').trim()
       elWindow.webContents.insertCSS(css)
-      log('loaded css :' + css.substring(0, 20) + '...', 'info', 5)
+      logger.info('loaded css :' + css.substring(0, 20) + '...')
     }
   )
 }
