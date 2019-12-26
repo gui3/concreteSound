@@ -24,32 +24,28 @@ intel.config({
   handlers: {
     terminal: {
       class: intel.handlers.Console,
-      'formatter': 'simple',
-      'level': intel.VERBOSE
+      formatter: 'simple',
+      level: intel.VERBOSE
     },
-    'logfile': {
-      'class': intel.handlers.File,
-      'level': intel.WARN,
-      'file': '/var/log/report.log',
-      'formatter': 'details',
-      'filters': ['db']
+    logfile: {
+      class: intel.handlers.File,
+      level: intel.WARN,
+      file: './log/report.log',
+      formatter: 'simple'
+      // filters: ['db']
     }
   },
   loggers: {
-    'patrol': {
-      'handlers': ['terminal'],
-      'level': 'INFO',
-      'handleExceptions': true,
-      'exitOnError': false,
-      'propagate': false
+    main: {
+      handlers: ['terminal'],
+      level: 'INFO',
+      handleExceptions: true,
+      exitOnError: false,
+      propagate: false
     },
-    'patrol.db': {
-      'handlers': ['logfile'],
-      'level': intel.ERROR
-    },
-    'patrol.node_modules.express': { // huh what? see below :)
-      'handlers': ['logfile'],
-      'level': 'WARN'
+    'main.keep': {
+      handlers: ['logfile'],
+      level: intel.ERROR
     }
   }
 })
