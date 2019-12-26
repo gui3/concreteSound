@@ -45,7 +45,7 @@ class StandardWindow extends BrowserWindow {
       if (this.onReadyToShow) this.onReadyToShow()
     })
 
-    logger.error('StandardWindow created')
+    logger.info('StandardWindow created')
   }
 }
 
