@@ -2,9 +2,8 @@ const { BrowserWindow } = require('electron')
 const path = require('path')
 
 const loadCss = require('./loadCss')
-const logger = require('../../config/getLogger')({
-  id: 'main.ui'
-})
+const logger = require('../logger/getLogger')('main.css')
+
 
 // default window settings
 const defaultProps = {

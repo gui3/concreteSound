@@ -1,10 +1,7 @@
-// const { BrowserWindow } = require('electron')
-// const path = require('path')
+
 const fs = require('fs')
 
-const logger = require('../../config/getLogger')({
-  id: 'main.css'
-})
+const logger = require('../logger/getLogger')('main.css')
 
 function loadCss (elWindow, cssPath) {
   fs.readFile(

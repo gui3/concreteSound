@@ -6,9 +6,7 @@
 
 // const path = require('path')
 
-const logger = require('./config/getLogger')({
-  id: 'main'
-})
+const logger = require('./shared/logger/getLogger')()
 
 const splash = require('./splash/splash')
 const StandardWindow = require('./shared/helpers/StandardWindow')
