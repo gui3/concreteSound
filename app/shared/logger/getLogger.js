@@ -36,15 +36,15 @@ intel.config({
   },
   loggers: {
     main: {
-      handlers: ['terminal'],
-      // level: intel.INFO,
+      handlers: ['terminal', 'logfile'],
+      // level: intel[process.env.LOG_LEVEL_T.toUpperCase()],
       handleExceptions: true,
       exitOnError: false,
       propagate: false
     },
-    'main.errors': {
+    'main.logfile': {
       handlers: ['logfile']// ,
-      // level: intel.ERROR
+      // level: intel[process.env.LOG_LEVEL_F.toUpperCase()]
     }
   }
 })

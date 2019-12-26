@@ -8,6 +8,8 @@
 
 const logger = require('./shared/logger/getLogger')()
 
+require('./shared/preboot/loadConfig')
+
 const splash = require('./splash/splash')
 const StandardWindow = require('./shared/helpers/StandardWindow')
 
