@@ -14,6 +14,46 @@
 const intel = require('intel')
 require('./loadEnv')
 
+intel.config({
+  formatters: {
+    simple: {
+      format: '[%(date)s] %(name)s.%(levelname)s: %(message)s',
+      colorize: true
+    }
+  },
+  handlers: {
+    terminal: {
+      class: intel.handlers.Console,
+      'formatter': 'simple',
+      'level': intel.VERBOSE
+    },
+    'logfile': {
+      'class': intel.handlers.File,
+      'level': intel.WARN,
+      'file': '/var/log/report.log',
+      'formatter': 'details',
+      'filters': ['db']
+    }
+  },
+  loggers: {
+    'patrol': {
+      'handlers': ['terminal'],
+      'level': 'INFO',
+      'handleExceptions': true,
+      'exitOnError': false,
+      'propagate': false
+    },
+    'patrol.db': {
+      'handlers': ['logfile'],
+      'level': intel.ERROR
+    },
+    'patrol.node_modules.express': { // huh what? see below :)
+      'handlers': ['logfile'],
+      'level': 'WARN'
+    }
+  }
+})
+
 function getLogger ({ id, level }) {
   id = id || 'main'
   level = level || process.env.LOG_LEVEL
@@ -23,14 +63,6 @@ function getLogger ({ id, level }) {
   logger.setLevel(
     logger[level.toUpperCase()]
   )
-  intel.config({
-    formatters: {
-      simple: {
-        format: '[%(date)s] %(name)s.%(levelname)s: %(message)s',
-        colorize: true
-      }
-    }
-  })
 
   logger.verbose('logger "' + id + '" ready, level ' + level)
 
