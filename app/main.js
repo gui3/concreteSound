@@ -6,15 +6,18 @@
 
 // const path = require('path')
 
-const logger = require('./shared/logger/getLogger')()
-
-require('./shared/preboot/loadConfig')
+const {
+  getLogger,
+  loadConfig
+} = require('./shared/utils')
+const logger = getLogger('main')
+loadConfig()
 
 const splash = require('./splash/splash')
 const StandardWindow = require('./shared/helpers/StandardWindow')
 
 function main () {
-  logger.verbose('Initialize main process ...')
+  logger.debug('Initialize main process ...')
 
   let splashScreen = splash()
   // spitting out the daemons
@@ -40,7 +43,8 @@ function main () {
     mainWindow = null
   })
 
-  logger.verbose('mainWindow ready')
+  logger.info('mainWindow ready !')
+  logger.debug('...main process OK')
 }
 
 module.exports = main

@@ -4,7 +4,7 @@
 
 const intel = require('intel')
 
-require('../preboot/loadConfig')
+require('./loadConfig')()
 
 intel.config({
   formatters: {

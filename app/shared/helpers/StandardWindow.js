@@ -2,8 +2,9 @@ const { BrowserWindow } = require('electron')
 const path = require('path')
 
 const loadCss = require('./loadCss')
-const logger = require('../logger/getLogger')('main.css')
 
+const { getLogger } = require('../utils')
+const logger = getLogger('main.css')
 
 // default window settings
 const defaultProps = {
@@ -25,6 +26,7 @@ class StandardWindow extends BrowserWindow {
     onReadyToShow,
     ...windowSettings
   }) {
+    logger.debug('creating StandardWindow ...')
     // calls new BrowserWindow with these props
     super({ ...defaultProps, ...windowSettings })
 
@@ -45,7 +47,7 @@ class StandardWindow extends BrowserWindow {
       if (this.onReadyToShow) this.onReadyToShow()
     })
 
-    logger.info('StandardWindow created')
+    logger.debug('...StandardWindow created')
   }
 }
 
